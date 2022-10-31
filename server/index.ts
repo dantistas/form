@@ -40,9 +40,9 @@ app.use(cors());
 app.use(express.static('build')); // build <<----
 app.use(express.json());
 
-// app.get('/', (_req: Request, res: Response) => {
-//   res.sendFile('Thank you');
-// });
+app.get('/', (_req: Request, res: Response) => {
+  res.sendFile('/build/index.html');
+});
 
 app.post('/submit', (_req: Request, _res: Response) => {
   if(!_req.body || !_req.body.firstName || !_req.body.email || !_req.body.surname || !_req.body.telephone || !_req.body.gender || !_req.body.dobDay || !_req.body.dobMonth || !_req.body.dobYear || !_req.body.comments){
